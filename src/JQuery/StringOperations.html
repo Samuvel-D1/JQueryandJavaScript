@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+</head>
+<body>
+<form style="text-align:center">
+    <label for="input1">Input1</label>
+    <input id="input1">
+    <br><br>
+    <label for="input2">Input2</label>
+    <input id="input2"> <br><br>
+    <p id="output"></p>
+
+    <input type="button"  value="FindLength Of Given Word" id="length"> </button>
+
+
+    <input type="button" id="uppercase" value="UpperCase" > </button>
+
+    <input type="button" id="lowercase" value="LowerCase" > </button>
+
+
+    <input type="button" id="Capitalize" value="Capitalize" > </button><br><br>
+
+    <input type="button" id="removeWord" value="removeGivenWord" > </button>
+
+
+    <input type="button" id="dotted" value="Dotted" > </button>
+
+
+    <input type="button" id="combineWord" value="Combine Two Words" > </button>
+</form>
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script>
+//Find Length
+    $(document).ready(function(){
+    $("#length").click(function(){
+    $("#output").text($("#input1").val().length);
+    });
+    });
+
+//Convert to UpperCase
+    $(document).ready(function(){
+    $("#uppercase").click(function(){
+    $("#output").text($("#input1").val().toUpperCase());
+    });
+    });
+
+
+//Convert to LowerCase
+    $(document).ready(function(){
+    $("#lowercase").click(function(){
+    $("#output").text($("#input1").val().toLowerCase());
+    });
+    });
+
+//Capitalize
+ $(document).ready(function(){
+    $("#Capitalize").click(function(){
+   var userInput=$("#input1").val();
+   const splitWords=userInput.split(" ");
+   for (var i = 0; i < splitWords.length; i++) {
+    splitWords[i] = splitWords[i].charAt(0).toUpperCase() + splitWords[i].slice(1);
+}
+ $("#output").text(splitWords.join(" "));
+    });
+    });
+
+//removeGivenWord
+ $(document).ready(function(){
+    $("#removeWord").click(function(){
+    $("#output").text($("#input1").val().replace($("#input2").val(),""));
+    });
+    });
+
+//Dotted
+ $(document).ready(function(){
+ $("#dotted").click(function(){
+ if($("#input1").val().length>20){
+ $("#output").text($("#input1").val().slice(0,20)+".....");
+ }
+ else{
+  $("#output").text($("#input1").val());
+ }
+});
+});
+
+//Combine Two Fields
+$(document).ready(function(){
+ $("#combineWord").click(function(){
+ $("#output").text($("#input1").val()+$("#input2").val());
+
+});
+});
+</script>
+</html>

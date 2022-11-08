@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+</head>
+<body>
+<label for="input1">Input 1</label>
+<input type="text" id="input1"><br><br>
+<label for="input2">Input 2</label>
+<input type="text" id="input2">
+<p id="output"></p>
+<input type="button" value="Length" id="length">
+<input type="button" value="LastValue" id="lastValue">
+<input type="button" value="List" id="list">
+<input type="button" value="Add" id="add">
+<input type="button" value="Replace" id="replace">
+<input type="button" value="Insert" id="insert">
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script>
+   var foodItems=["Idly", "Pongal", "Poori", "Vada"];
+    $(document).ready(function(){
+    $("#length").click(function(){
+    $("#output").text(foodItems.length);
+    });
+    });
+
+     $(document).ready(function(){
+    $("#lastValue").click(function(){
+    $("#output").text(foodItems[foodItems.length-1]);
+    });
+    });
+
+     $(document).ready(function(){
+    $("#list").click(function(){
+    $("#output").text(foodItems.toString());
+    });
+    });
+
+
+      $(document).ready(function(){
+    $("#add").click(function(){
+    foodItems.push($("#input1").val());
+    });
+    });
+
+       $(document).ready(function(){
+    $("#replace").click(function(){
+   let index=foodItems.indexOf($("#input1").val());
+   foodItems[index]=$("#input2").val();
+    });
+    });
+
+         $(document).ready(function(){
+    $("#insert").click(function(){
+     let index=foodItems.indexOf($("#input1").val());
+   foodItems.splice(index,0,$("#input2").val())
+    });
+    });
+</script>
+</html>

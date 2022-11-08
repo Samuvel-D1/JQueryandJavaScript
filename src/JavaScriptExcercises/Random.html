@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+</head>
+<body>
+<div class="div">
+<input id="input" type="number">
+<p id="output"></p>
+<input type="button" id="b1" value="Generate xPassword" onclick="random()">
+    </div>
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script>
+function random(){
+var userInput=document.getElementById("input").value;
+var number="";
+for(let i=0;i<userInput;i++){
+number+=9;
+}
+   var random = Math.floor(Math.random() * number);
+   if(random.length<userInput){
+   random();
+   console.log("hi");
+   }
+   console.log("hi");
+document.getElementById("output").innerText=random;
+    }
+</script>
+<style>
+.div{
+margin-left:500px;
+margin-top:180px;
+background-color:
+
+ #b3ffcc;
+width:350px;
+height:250px;
+text-align:center;
+border-radius:8px;
+}
+#input{
+margin-top:70px;
+background-color:pink;
+width:200px;
+height:30px;
+border-radius:25px;
+}
+#b1{
+background-color:pink;
+width:200px;
+height:30px;
+border-radius:25px;
+}
+</style>
+</html>
