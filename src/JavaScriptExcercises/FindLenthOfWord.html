@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head >
+    <form style="text-align:center">
+    <label for="input1">Input1</label>
+<input id="input1">
+    <br><br>
+    <label for="input2">Input2</label>
+    <input id="input2"> <br><br>
+    <input id="length" value="length"><br><br>
+
+    <input type="button" id="flength" value="FindLength Of Given Word" onclick="findLength()"> </button>
+    <br><br>
+    <input id="UpCase" value="UpperCase"><br><br>
+
+    <input type="button" id="uppercase" value="UpperCase" onclick="toUpperCase()"> </button><br><br>
+
+    <input id="LoCase" value="LowerCase"><br><br>
+
+    <input type="button" id="lowercase" value="LowerCase" onclick="toLowerCase()"> </button><br><br>
+
+    <input id="Capitalized" value="Capitalized String"><br><br>
+
+    <input type="button" id="Capitalize" value="Capitalize" onclick="capitalize()"> </button><br><br>
+
+    <input id="remove" value="Output String"><br><br>
+
+    <input type="button" id="removeWord" value="removeGivenWord" onclick="removeWords()"> </button><br><br>
+
+        <input id="dot" value="Dotted String"><br><br>
+
+        <input type="button" id="dotted" value="Dotted" onclick="dottedString()"> </button><br><br>
+
+    <input id="combine" value="Combined String"><br><br>
+
+    <input type="button" id="combineWord" value="Combine Two Words" onclick="combineWords()"> </button>
+    </form>
+</head>
+
+<body>
+<script>
+
+function findLength(){
+var input1=document.getElementById("input1").value;
+    document.getElementById("length").value=input1.length;
+}
+
+function toUpperCase(){
+var input1=document.getElementById("input1").value;
+    document.getElementById("UpCase").value=input1.toUpperCase();
+}
+
+function toLowerCase(){
+var input1=document.getElementById("input1").value;
+    document.getElementById("LoCase").value=input1.toLowerCase();
+}
+
+function capitalize() {
+var input1=document.getElementById("input1").value;
+ const splitWords = input1.split(" ");
+
+for (var i = 0; i < splitWords.length; i++) {
+    splitWords[i] = splitWords[i].charAt(0).toUpperCase() + splitWords[i].slice(1);
+}
+const result = splitWords.join(" ");
+document.getElementById("Capitalized").value=result;
+
+}
+function removeWords(){
+var input1=document.getElementById("input1").value;
+var input2=document.getElementById("input2").value;
+    document.getElementById("remove").value=input1.replace(input2,"");
+}
+
+function combineWords(){
+var input1=document.getElementById("input1").value;
+var input2=document.getElementById("input2").value;
+    document.getElementById("combine").value=input1+" "+input2;
+}
+
+function dottedString(){
+var input1=document.getElementById("input1").value;
+if(input1.length>20){
+    document.getElementById("dot").value=input1.slice(0,20)+"....";
+    }
+    else{
+     document.getElementById("dot").value=input1;
+    }
+    }
+
+</script>
+</body>
+</html>

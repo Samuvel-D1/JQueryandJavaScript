@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+</head>
+<body>
+<label for="inp1">Enter Your Text</label><br><br>
+<input id="inp1" type="text">
+<input type="button" id="getInput" value="Enter"></input>
+<p id="text">This is <bold>Samuvel</bold></p>
+<button id="button1">Text</button>
+<button id="button2">HTML</button>
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script>
+    $(document).ready(function(){
+     $("#button1").click(function(){
+     alert("Text :" + $("#text").text());
+    });
+    $("#button2").click(function(){
+     alert("HTML :" + $("#text").html());
+         });
+    });
+<!--    get the input field value-->
+$(document).ready(function(){
+$("#getInput").click(function(){
+alert("your text "+$("#inp1").val());
+});
+});
+</script>
+</html>

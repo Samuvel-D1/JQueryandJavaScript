@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+</head>
+<body>
+<input type="text" id="input">
+<p id="P">Text:</p>
+<input type="button" value="AddText" id="after" >
+<input type="button" value="AddText" id="before">
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script>
+    $(document).ready(function(){
+    $("#after").click(function(){
+    $("#P").after($("#input").val())
+    });
+    });
+
+     $(document).ready(function(){
+    $("#before").click(function(){
+    $("#P").before($("#input").val())
+    });
+    });
+</script>
+</html>

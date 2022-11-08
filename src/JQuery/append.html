@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+</head>
+<body>
+<input type="text" id="input">
+<p id="P">Text:</p>
+<input type="button" value="AddText" id="Append" >
+<input type="button" value="AddText" id="PreAppend">
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script>
+    $(document).ready(function(){
+    $("#Append").click(function(){
+    $("#P").append($("#input").val())
+    });
+    });
+
+     $(document).ready(function(){
+    $("#PreAppend").click(function(){
+    $("#P").prepend($("#input").val())
+    });
+    });
+</script>
+</html>

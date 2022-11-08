@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<p id="text"></p>
+<input type="button" value="Click" onclick="method()">
+</body>
+<script>
+
+  function method(){
+        let count = 0;
+        var letters="abcdefghijklmnopqrstuvwxyz";
+        for (let i=2;i<=16;i++) {
+            for (let j = 0; j <= 5; j++) {
+              if(i%3==0){
+                    if(count<letters.length){
+                       document.getElementById("text").innerText+=letters.charAt(count);
+                        count++;
+                    }
+                }
+                else {
+                       document.getElementById("text").innerText+="- ";
+                }
+            }document.getElementById("text").innerText+="\n";
+        }
+
+    }
+</script>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+</head>
+<body>
+<form style="text-align:center">
+<h1> Factorial</h1>
+<label for="input">Enter The Number</label>
+<input id="input"><br><br>
+<input type="button" onclick="factorial()" value="Find Factorial"><br><br>
+    <label for="output" >OutPut</label>
+<input id="output" >
+</form>
+</body>
+<script>
+    function factorial(){
+    let fact=1;
+    var a=document.getElementById("input").value;
+    for(let i=1;i<=a;i++){
+    fact=fact*i;
+    }
+    document.getElementById("output").value=fact;
+
+    }
+</script>
+</html>

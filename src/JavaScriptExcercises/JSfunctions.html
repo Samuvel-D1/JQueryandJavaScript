@@ -1,0 +1,71 @@
+<html>
+<head>
+
+</head>
+<body>
+<label for="input1">Enter Text</label>
+<input id="input1" type="text"><br><br>
+<label for="input2">Enter Text</label>
+<input id="input2" type="text"><br>
+<p id="text"></p>
+<input type="button" value="FindLength" onclick="findLength()">
+<input type="button" value="FindLastValue" onclick="lastValue()">
+<input type="button" value="View" onclick="arrayToString()">
+<input type="button" value="Add Value" onclick="addValue()">
+<input type="button" value="Replace Value" onclick="changeValue()">
+<input type="button" value="Insert Value Before" onclick="insert()">
+
+
+
+</body>
+<script>
+        var foodItems=["Idly", "Pongal", "Poori", "Vada"];
+        function findLength(){
+            document.getElementById("text").innerText=foodItems.length;
+        }
+        function lastValue(){
+            document.getElementById("text").innerText=foodItems[foodItems.length-1];
+        }
+        function arrayToString(){
+            var string=foodItems.toString();
+            document.getElementById("text").innerText=string;
+        }
+        function addValue(){
+          var input=document.getElementById("input1").value;
+           if(input==""){
+            document.getElementById("text").innerText="Enter The Item";
+            }else{
+             foodItems.push(input);
+            document.getElementById("text").innerText="Added Successfully";
+        }
+        }
+        function changeValue(){
+          var input=document.getElementById("input1").value;
+          var input2=document.getElementById("input2").value;
+          if(input==""|input2==""){
+            document.getElementById("text").innerText="Enter Corresponding Inputs";
+          }
+          else{
+            let index=foodItems.indexOf(input);
+          foodItems[index]=input2;
+            document.getElementById("text").innerText="Changed";
+          }
+          }
+
+        function insert(){
+            var input=document.getElementById("input1").value;
+          var input2=document.getElementById("input2").value;
+          let index=foodItems.indexOf(input);
+          if(input==""|input2==""){
+            document.getElementById("text").innerText="Enter Corresponding Inputs";
+          }
+          else{
+            foodItems.splice(index,0,input2);
+            document.getElementById("text").innerText="Inserted";
+
+          }
+
+        }
+
+    </script>
+</html>

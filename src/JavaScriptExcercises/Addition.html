@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+</head>
+<body>
+<form style="text-align:center">
+  <h2>Arithmetic Operations </h2>
+  <label for="input1">Enter First Number</label>
+  <input id="input1"><br><br>
+  <label for="input2">Enter Second Number</label>
+  <input id="input2">
+  <br><br>
+  <input type="button" value="Addition" onclick="Addition()">
+  <input type="button" value="Subtract" onclick="subtraction()">
+  <input type="button" value="Multiply" onclick="Multiplication()">
+  <input type="button" value="Div" onclick="Divide()"><br><br>
+  <label for="output">OutPut</label>
+  <input id="output" type="text">
+</form>
+</body>
+<script>
+function Addition(){
+  const num1=document.getElementById("input1").value;
+    const num2=document.getElementById("input2").value;
+    document.getElementById("output").value=parseInt(num1)+parseInt(num2);
+    }
+  function subtraction(){
+  const num1=document.getElementById("input1").value;
+    const num2=document.getElementById("input2").value;
+    document.getElementById("output").value=num1-num2;
+    }
+    function Multiplication(){
+  const num1=document.getElementById("input1").value;
+    const num2=document.getElementById("input2").value;
+    document.getElementById("output").value=num1*num2;
+    }
+    function Divide(){
+  const num1=document.getElementById("input1").value;
+    const num2=document.getElementById("input2").value;
+    document.getElementById("output").value=num1/num2;
+    }
+</script>
+</html>

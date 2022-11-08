@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+</head>
+<body>
+<form style="text-align:center">
+  <h2>Arithmetic Operations </h2>
+  <label for="input1">Enter First Number</label>
+  <input id="input1"><br><br>
+  <label for="input2">Enter Second Number</label>
+  <input id="input2">
+  <br><br>
+  <input type="button" value="Addition" id="addition">
+  <input type="button" value="Subtract" id="subtraction">
+  <input type="button" value="Multiply" id="multiplication">
+  <input type="button" value="Div" id="divition"><br><br>
+  <label for="output">OutPut</label>
+  <p id="output"></p>
+</form>
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script>
+//Addition
+$(document).ready(function(){
+    $("#addition").click(function(){
+    $("#output").text(parseInt($("#input1").val())+parseInt($("#input2").val()));
+    });
+    });
+//Subtraction
+  $(document).ready(function(){
+    $("#subtraction").click(function(){
+    $("#output").text($("#input1").val()-$("#input2").val());
+    });
+    });
+
+//Multiplication
+     $(document).ready(function(){
+    $("#multiplication").click(function(){
+    $("#output").text($("#input1").val()*$("#input2").val());
+    });
+    });
+
+//Division
+      $(document).ready(function(){
+    $("#divition").click(function(){
+    $("#output").text($("#input1").val()/$("#input2").val());
+    });
+    });
+</script>
+</html>
