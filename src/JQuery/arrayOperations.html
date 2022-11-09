@@ -23,35 +23,34 @@
     $("#length").click(function(){
     $("#output").text(foodItems.length);
     });
-    });
 
-     $(document).ready(function(){
+
+
     $("#lastValue").click(function(){
     $("#output").text(foodItems[foodItems.length-1]);
     });
-    });
 
-     $(document).ready(function(){
+
+
     $("#list").click(function(){
     $("#output").text(foodItems.toString());
     });
-    });
 
 
-      $(document).ready(function(){
+
+
     $("#add").click(function(){
     foodItems.push($("#input1").val());
     });
-    });
 
-       $(document).ready(function(){
+
     $("#replace").click(function(){
    let index=foodItems.indexOf($("#input1").val());
    foodItems[index]=$("#input2").val();
     });
-    });
 
-         $(document).ready(function(){
+
+
     $("#insert").click(function(){
      let index=foodItems.indexOf($("#input1").val());
    foodItems.splice(index,0,$("#input2").val())

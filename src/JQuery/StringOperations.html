@@ -38,25 +38,25 @@
     $("#length").click(function(){
     $("#output").text($("#input1").val().length);
     });
-    });
+
 
 //Convert to UpperCase
-    $(document).ready(function(){
+
     $("#uppercase").click(function(){
     $("#output").text($("#input1").val().toUpperCase());
     });
-    });
+
 
 
 //Convert to LowerCase
-    $(document).ready(function(){
+
     $("#lowercase").click(function(){
     $("#output").text($("#input1").val().toLowerCase());
     });
-    });
+
 
 //Capitalize
- $(document).ready(function(){
+
     $("#Capitalize").click(function(){
    var userInput=$("#input1").val();
    const splitWords=userInput.split(" ");
@@ -65,17 +65,17 @@
 }
  $("#output").text(splitWords.join(" "));
     });
-    });
+
 
 //removeGivenWord
- $(document).ready(function(){
+
     $("#removeWord").click(function(){
     $("#output").text($("#input1").val().replace($("#input2").val(),""));
     });
-    });
+
 
 //Dotted
- $(document).ready(function(){
+
  $("#dotted").click(function(){
  if($("#input1").val().length>20){
  $("#output").text($("#input1").val().slice(0,20)+".....");
@@ -84,10 +84,10 @@
   $("#output").text($("#input1").val());
  }
 });
-});
+
 
 //Combine Two Fields
-$(document).ready(function(){
+
  $("#combineWord").click(function(){
  $("#output").text($("#input1").val()+$("#input2").val());
 
