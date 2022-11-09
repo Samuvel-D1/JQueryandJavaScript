@@ -24,32 +24,22 @@
     $("#output").text(foodItems.length);
     });
 
-
-
     $("#lastValue").click(function(){
     $("#output").text(foodItems[foodItems.length-1]);
     });
-
-
 
     $("#list").click(function(){
     $("#output").text(foodItems.toString());
     });
 
-
-
-
     $("#add").click(function(){
     foodItems.push($("#input1").val());
     });
-
 
     $("#replace").click(function(){
    let index=foodItems.indexOf($("#input1").val());
    foodItems[index]=$("#input2").val();
     });
-
-
 
     $("#insert").click(function(){
      let index=foodItems.indexOf($("#input1").val());
