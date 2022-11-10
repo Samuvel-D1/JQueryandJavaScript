@@ -82,72 +82,64 @@
 <script>
 $(document).ready(function(){
 $("#submit").click(function(){
-event.preventDefault();
-nameValidation();
-emailValidation();
- mobileNumberValidation();
-AddressValidation1();
-})
-
+var status=true;
 //Address Validation
-function AddressValidation(){
 if($("#Street").val()==''&& $("#City").val()==''&& $("#State").val()==''&& $("#Postal").val()==''){
 $("#addressSpan").html("<span></span>");
-    return true;
 }
 else if($("#Street").val()!=''&& $("#City").val()!=''&& $("#State").val()!=''&& $("#Postal").val()!=''){
 $("#addressSpan").html("<span></span>");
-return true;
 }
 else{
 $("#addressSpan").html("<span>Fill All Address Field</span>");
-return false;
-}
+status =false;
 }
 
 //Name Validation
-function nameValidation(){
 if($("#fName").val()==""){
 $("#fNameSpan").html("<span> Please Fill This Field</span>");
-return false;
+status =false;
 }
 else if($("#fName").val().length<3){
 $("#fNameSpan").html("<span> Please Fill Character More Than 3</span>");
-return false;
+status =false;
 }
+else{
 $("#fNameSpan").html("<span></span>");
-return true;
 }
 
 //Email Validation
-function emailValidation(){
+let regex = new RegExp('[a-z0-9]+@[a-z]+\.edu\.[a-z]{2,3}');
 var email=$("#email1").val();
 if(email==""){
 $("#eSpan").html("<span>Please Fill This Field</span>");
-return false;
+status =false;
 }
-else if(!email.includes("@")){
+else if(!regex.test(email)){
+alert(regex.test(email))
 $("#eSpan").html("<span>Enter a Valid Email</span>");
-return false;
+status =false;
 }
+else{
 $("#eSpan").html("<span></span>");
-return true;
 }
 
 //Mobile Number Validation
-function mobileNumberValidation(){
 if($("#mobileNumber").val()=="")
 {
 $("#mobileSpan").html("<span>Please Fill This Field</span>")
-return false;
+status= false;
 }
 else if($("#mobileNumber").val().length>10||$("#mobileNumber").val().length<10){
 $("#mobileSpan").html("<span>Enter Valid Number</span>")
-return false;
+status =false;
 }
+else{
 $("#mobileSpan").html("<span></span>")
-return true;
+<!--status true;-->
 }
+return status;
+})
 })
 
 </script>
