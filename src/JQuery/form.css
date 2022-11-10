@@ -1,0 +1,184 @@
+
+ .formDiv{
+  margin-left:300px;
+  height:800px;
+  width:700px;
+  border:5px solid #cccccc;
+  background-color:white;
+  }
+
+  #name{
+  height:80px;
+  margin-top:20px;
+  width:663px;
+  background-color:white;
+  }
+
+  #fNameDiv{
+  margin-left:240px;
+  margin-top:-17px;
+  height:40px;
+  width:180px;
+  border:5px solid #cccccc;
+  background-color:white;
+  }
+
+  #fSpan{
+  margin-top:19px;
+  margin-left:18px
+  }
+
+  #lSpan{
+  margin-top:19px;
+  margin-left:18px
+  }
+
+  .inputField{
+  margin-top:9px;
+  margin-left:5px;
+  }
+
+  #lNameDiv{
+  margin-left:472px;
+  height:40px;
+  width:180px;
+  margin-top:-50px;
+  border:5px solid #cccccc;
+
+  }
+
+  #nLabel{
+  margin-top:40px;
+  margin-left:20px;
+ }
+
+  .Address{
+  height:278px;
+  width:650px;
+  margin-left:20px;
+  margin-top: -12px;
+
+}
+
+  #StreetDiv{
+  margin-left:220px;
+  height:40px;
+  width:413px;
+  border:5px solid #cccccc;
+}
+
+  #CityDiv{
+  margin-left:220px;
+  margin-top:42px;
+  height:40px;
+  width:180px;
+  border:5px solid #cccccc;
+}
+
+  #StateDiv{
+  margin-left:450px;
+  margin-top:-52px;
+  height:40px;
+  width:180px;
+  border:5px solid #cccccc;
+}
+
+  #PostalDiv{
+  margin-left:220px;
+  margin-top:42px;
+  height:40px;
+  width:180px;
+  border:5px solid #cccccc;
+}
+
+#AddressLabel{
+margin-top:20px;
+margin-left:20px;
+height:0px;
+  width:105px;
+   padding-top:10px;
+}
+#spanDiv{
+margin-left:223px;
+margin-top:23px
+}
+
+
+  #emailDiv{
+  height:120px;
+  width:650px;
+  margin-left:20px;
+}
+  #email{
+  margin-left:220px;
+  margin-top:-61px;
+  height:40px;
+  width:413px;
+  border:5px solid #cccccc;
+}
+#email1{
+margin-top:10px;
+}
+ #eLabelDiv{
+ height:50px;
+   width:51px;
+   margin-top:-25px;
+   padding-top:48px;
+
+ }
+ #eSpanDiv{
+ margin-left:222px;
+ margin-top:7px;
+ }
+
+  .number{
+  height:100px;
+  width:700px;
+  margin-left:20px;
+}
+  #aCode{
+  margin-left:120px;
+  height:40px;
+  width:80px;
+  border:5px solid #cccccc;
+}
+  #pNumber{
+  margin-left:30px;
+  height:40px;
+  width:300px;
+  border:5px solid #cccccc;
+}
+  .mNumber{
+  height:100px;
+  width:700px;
+  margin-left:20px;
+}
+  #aCode1{
+  margin-left:110px;
+  height:40px;
+  width:80px;
+  border:5px solid #cccccc;
+}
+
+  #mobileNumber{
+  margin-left:24px;
+  height:40px;
+  width:300px;
+  border:5px solid #cccccc;
+}
+#mNumberSpan{
+margin-left:210px;
+margin-top:10px;
+}
+  form .error {
+  color: #ff0001;
+}
+
+.span{
+color:red;
+}
+.button{
+margin-left:220px;
+height:30px;
+width:60px;
+}

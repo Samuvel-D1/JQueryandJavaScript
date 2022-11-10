@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="form.css">
+</head>
+<body>
+<div class="formDiv">
+    <form id="form" name="form">
+        <div id="name">
+            <div id="nLabel">
+                <label>Name:</label>
+            </div>
+            <div id="fNameDiv">
+                <input type="text" id="fName" name="fName" class="inputField" placeholder="FirstName" minlength="3"><br>
+               <div id="fSpan">
+                   <span class="span" id="fNameSpan"></span>
+               </div>
+            </div>
+            <div id="lNameDiv">
+                <input type="text" id="lName" name="lName" class="inputField" placeholder="LastName">
+                <div id="lSpan">
+                    <span class="span" id="lNameSpan"></span>
+                </div>
+            </div>
+        </div>
+
+        <div id="AddressLabel">
+            <label id="aLabel">Address:</label>
+        </div>
+        <div class="Address">
+            <div id="StreetDiv">
+                <input id="Street" name="Street" type="text" class="inputField" placeholder="Street Address">
+            </div>
+            <div id="CityDiv">
+                <input id="City" name="City" type="text"class="inputField" placeholder="City">
+            </div>
+            <div id="StateDiv">
+                <input id="State" name="State" type="text" class="inputField" placeholder="State">
+            </div>
+            <div id="PostalDiv">
+                <input id="Postal" name="Postal" type="text" class="inputField" placeholder="Postal">
+            </div>
+            <div id="spanDiv">
+                <span id="addressSpan" class="span"> </span>
+            </div>
+        </div>
+
+        <div id="emailDiv">
+                <div id="eLabelDiv">
+                    <label id="eLabel">E-mail:</label>
+                </div>
+                <div id="email">
+                <input type="email" name="email" id="email1" class="inputField" placeholder="example@example.com"  >
+                </div>
+            <div id="eSpanDiv">
+                <span id="eSpan" class="span"></span>
+            </div>
+            </div>
+
+        <div class="number">
+            <label>Home Number:</label>
+            <input type="text" name="hAreaCode" id="aCode" class="inputField" placeholder="AreaCode">
+            <input type="text" id="pNumber"class="inputField" placeholder="Phone Number">
+        </div>
+        <div class="mNumber">
+            <label>Mobile Number:</label>
+            <input type="number" name="MAreaCode" id="aCode1" class="inputField" placeholder="AreaCode">
+            <input type="text" id="mobileNumber" class="inputField" name="mobileNumber" placeholder="Phone Number">
+            <div id="mNumberSpan">
+                <span class="span" id="mobileSpan"></span>
+            </div>
+
+        </div>
+        <input type="submit" value="Submit" id="submit" class="button">
+        <input type="reset" id="reset" value="Reset" class="button">
+
+    </form>
+</div>
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.1/jquery.validate.min.js"></script>
+<script>
+$(document).ready(function(){
+$("#submit").click(function(){
+event.preventDefault();
+nameValidation();
+emailValidation();
+ mobileNumberValidation();
+AddressValidation1();
+})
+
+//Address Validation
+function AddressValidation(){
+if($("#Street").val()==''&& $("#City").val()==''&& $("#State").val()==''&& $("#Postal").val()==''){
+$("#addressSpan").html("<span></span>");
+    return true;
+}
+else if($("#Street").val()!=''&& $("#City").val()!=''&& $("#State").val()!=''&& $("#Postal").val()!=''){
+$("#addressSpan").html("<span></span>");
+return true;
+}
+else{
+$("#addressSpan").html("<span>Fill All Address Field</span>");
+return false;
+}
+}
+
+//Name Validation
+function nameValidation(){
+if($("#fName").val()==""){
+$("#fNameSpan").html("<span> Please Fill This Field</span>");
+return false;
+}
+else if($("#fName").val().length<3){
+$("#fNameSpan").html("<span> Please Fill Character More Than 3</span>");
+return false;
+}
+$("#fNameSpan").html("<span></span>");
+return true;
+}
+
+//Email Validation
+function emailValidation(){
+var email=$("#email1").val();
+if(email==""){
+$("#eSpan").html("<span>Please Fill This Field</span>");
+return false;
+}
+else if(!email.includes("@")){
+$("#eSpan").html("<span>Enter a Valid Email</span>");
+return false;
+}
+$("#eSpan").html("<span></span>");
+return true;
+}
+
+//Mobile Number Validation
+function mobileNumberValidation(){
+if($("#mobileNumber").val()=="")
+{
+$("#mobileSpan").html("<span>Please Fill This Field</span>")
+return false;
+}
+else if($("#mobileNumber").val().length>10||$("#mobileNumber").val().length<10){
+$("#mobileSpan").html("<span>Enter Valid Number</span>")
+return false;
+}
+$("#mobileSpan").html("<span></span>")
+return true;
+}
+})
+
+</script>
+</html>

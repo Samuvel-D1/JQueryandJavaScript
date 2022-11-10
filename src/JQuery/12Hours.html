@@ -17,18 +17,22 @@ function startTime() {
   let seconds = today.getSeconds();
   m = checkTime(minute);
   s = checkTime(seconds);
-  document.getElementById('time').innerHTML =  hour + ":" + minute + ":" + seconds ;
-  setTimeout(startTime, 1000);
+   var a;
+  if(h>12)
+  {
+  h=h-12;
+  a="PM";
+  }
+  else{
+  a="AM";
+  }
+  $("#time").text(hour + ":" + minute + ":" + seconds+" "+a);
 }
 
 function checkTime(i) {
   if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
   return i;
 }
- $(document).ready(function () {
-    setInterval(updateClock, 1000);
-});
-
 </script>
 <style>
     #div{
