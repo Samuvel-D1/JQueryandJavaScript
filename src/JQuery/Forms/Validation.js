@@ -24,8 +24,11 @@ $(document).ready(function(){
 
         $("#submit").click(function(){
             event.preventDefault();
-            $("#form").valid();
-             var json=convertFormToJSON(form);
+            if($("#form").valid()){
+            alert("Form Submitted");
+            var json=convertFormToJSON(form);
+            }
+
             });
         function convertFormToJSON(form) {
             const array = $(form).serializeArray();

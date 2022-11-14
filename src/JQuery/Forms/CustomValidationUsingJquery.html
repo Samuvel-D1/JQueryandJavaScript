@@ -80,33 +80,42 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.1/jquery.validate.min.js"></script>
 <script>
-$(document).ready(function(){
-$("#submit").click(function(){
-var status=true;
+        $(document).ready(function(){
+        $("#submit").click(function(){
+        var status=true;
+
 //Address Validation
-if($("#Street").val()==''&& $("#City").val()==''&& $("#State").val()==''&& $("#Postal").val()==''){
-$("#addressSpan").html("<span></span>");
-}
-else if($("#Street").val()!=''&& $("#City").val()!=''&& $("#State").val()!=''&& $("#Postal").val()!=''){
-$("#addressSpan").html("<span></span>");
-}
-else{
-$("#addressSpan").html("<span>Fill All Address Field</span>");
-status =false;
+//if the All Address Fields Are Empty it does not return anything
+        if($("#Street").val()==''&& $("#City").val()==''&& $("#State").val()==''&& $("#Postal").val()==''){
+        $("#addressSpan").html("<span></span>");
+        }
+
+//if the All address Fields Are filed it does not return anything
+        else if($("#Street").val()!=''&& $("#City").val()!=''&& $("#State").val()!=''&& $("#Postal").val()!=''){
+        $("#addressSpan").html("<span></span>");
 }
 
+//if any one AddressField is filled or any one field is missed status becomes false;
+        else{
+        $("#addressSpan").html("<span>Fill All Address Field</span>");
+        status =false;
+        }
+
 //Name Validation
-if($("#fName").val()==""){
-$("#fNameSpan").html("<span> Please Fill This Field</span>");
-status =false;
-}
-else if($("#fName").val().length<3){
-$("#fNameSpan").html("<span> Please Fill Character More Than 3</span>");
-status =false;
-}
-else{
-$("#fNameSpan").html("<span></span>");
-}
+//FirstName field is empty it return false
+        if($("#fName").val()==""){
+        $("#fNameSpan").html("<span> Please Fill This Field</span>");
+        status =false;
+        }
+//FirstName length<3, it return false
+        else if($("#fName").val().length<3){
+        $("#fNameSpan").html("<span> Please Fill Character More Than 3</span>");
+        status =false;
+        }
+//The above conditions satisfied it return nothing
+        else{
+        $("#fNameSpan").html("<span></span>");
+        }
 
 //Email Validation
         var emailExp=/^([A-Za-z0-9_.])+\@([a-z])+\.([a-z])+$/
@@ -124,35 +133,40 @@ $("#fNameSpan").html("<span></span>");
         }
 
 //Mobile Number Validation
-if($("#mobileNumber").val()=="")
-{
-$("#mobileSpan").html("<span>Please Fill This Field</span>")
-status= false;
-}
-else if($("#mobileNumber").val().length>10||$("#mobileNumber").val().length<10){
-$("#mobileSpan").html("<span>Enter Valid Number</span>")
-status =false;
-}
-else{
-$("#mobileSpan").html("<span></span>")
-<!--status true;-->
-}
-if(status){
-var json=convertFormToJSON("#form");
-alert(json);
-}
-return status;
+//Mobile Number is empty,it return false
+        if($("#mobileNumber").val()=="")
+        {
+        $("#mobileSpan").html("<span>Please Fill This Field</span>")
+        status= false;
+        }
+//mobile number length>10 or <10 it return false
+        else if($("#mobileNumber").val().length>10||$("#mobileNumber").val().length<10){
+        $("#mobileSpan").html("<span>Enter Valid Number</span>")
+        status =false;
+        }
+//The above conditions satisfied it return nothing
+        else{
+        $("#mobileSpan").html("<span></span>")
+//if the status is true the alert message comes with the form details
+        }
+        if(status){
+        var json=convertFormToJSON("#form");
+        alert(json);
+        }
+        return status;
 
-})
-function convertFormToJSON(form) {
-  const array = $(form).serializeArray(); // Encodes the set of form elements as an array of names and values.
-  const json = {};
-  $.each(array, function () {
-    json[this.name] = this.value || "";
-  });
-  return json;
-}
-})
+        })
+//this function used to convert the form details to JSON String
+        function convertFormToJSON(form) {
+// Encodes the set of form elements as an array of names and values.
+        const array = $(form).serializeArray();
+        const json = {};
+        $.each(array, function () {
+        json[this.name] = this.value || "";
+        });
+        return json;
+        }
+        })
 
 </script>
 </html>

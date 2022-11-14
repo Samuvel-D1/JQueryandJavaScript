@@ -1,4 +1,6 @@
 $(document).ready(function(){
+/*this method checks the Address fields are completed or empty or anyone of the field is filled or any one
+the field is empty*/
     jQuery.validator.addMethod("Address",function(value,element){
          if($("#Street").val()!=""&&$("#State").val()!=""&&$("#City").val()!=""&&$("#PinCode").val()!=""){
             return true;
@@ -20,17 +22,20 @@ $(document).ready(function(){
            },
 
         })
-
+//here the submission process are performed
         $("#submit").click(function(){
             event.preventDefault();
+ //valid method checks the form is valid or not
             if($("#form").valid()){
             var json=convertFormToJSON(form);
-             const jsonString=JSON.stringify(json);
-             localStorage.setItem('FormDetails',jsonString);
-             window.location.href="SecondForm.html";
+            const jsonString=JSON.stringify(json);
+ //here the FormDetails Contain the json object it carry to the next page
+            localStorage.setItem('FormDetails',jsonString);
+ //here the page selection is occurred
+            window.location.href="SecondForm.html";
             }
-
         })
+  //this method convert form details to json String
         function convertFormToJSON(form) {
             const array = $(form).serializeArray();
             const json = {};
