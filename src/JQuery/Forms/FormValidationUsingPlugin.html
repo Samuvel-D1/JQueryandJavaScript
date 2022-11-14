@@ -1,0 +1,124 @@
+<html>
+<head>
+
+    <!-- CSS only -->
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+    <link rel="stylesheet" href="Style.css">
+    <style>
+            body{
+                background-color: aqua;
+            }
+        </style>
+</head>
+<body>
+<form action="" id="form">
+    <div class="container distance">
+        <div class="row padding">
+            <div class="col-4 padding">
+                <label for="">Name:</label>
+            </div>
+            <div class="col-4 padding">
+                <input type="text" placeholder="FirstName" id="FirstName" name="FirstName">
+            </div>
+            <div class="col-4 padding">
+                <input type="text" placeholder="LastName" id="LastName" name="LastName">
+            </div>
+
+        </div>
+
+        <div class="row">
+            <div class="col-4 padding">
+                <label for="">Address:</label>
+            </div>
+            <div class="col-8 padding">
+                <input type="text" placeholder="Street" id="Street" name="Street">
+            </div>
+        </div>
+
+        <div class="row margin">
+            <div class="col-4 padding">
+                <label for=""></label>
+            </div>
+            <div class="col-4 padding">
+                <input type="text" placeholder="City" id="City" name="City">
+            </div>
+            <div class="col-4 padding">
+                <input type="text" placeholder="State" id="State" name="State">
+            </div>
+        </div>
+        <div class="row margin">
+            <div class="col-4 padding"></div>
+            <div class="col-4 padding"><input type="text" placeholder="PinCode" id="PinCode" name="PinCode"></div>
+        </div>
+        <div class="row margin">
+            <div class="col-4 padding">
+                <label for="">Email:</label>
+            </div>
+            <div class="col-8 padding"><input type="text" placeholder="sample@gmail.com" id="email"  name="email"></div>
+        </div>
+        <div class="row margin">
+            <div class="col-4 padding">
+                <label>HomeNumber:</label>
+            </div>
+            <div class="col-2 padding ">
+                <input type="text" class="AreaCode" placeholder="AreaCode" id="HAreaCode" name="HAreaCode">
+            </div>
+
+            <div class="col-6  padding">
+                <input type="text" class="numberWidth" placeholder="HomeNumber" id="HomeNumber" name="HomeNumber">
+            </div>
+        </div>
+        <div class="row margin">
+            <div class="col-4 padding">
+                <label for="">MobileNumber:</label>
+            </div>
+            <div class="col-2 padding ">
+                <input type="text" class="AreaCode" placeholder="AreaCode" id="MAreaCode" name="MAreaCode">
+            </div>
+
+            <div class="col-6 padding ">
+                <input type="text" class="numberWidth"placeholder="MobileNumber" id="MobileNumber" name="MobileNumber">
+            </div>
+        </div>
+        <div class="row margin">
+            <div class="col-6 padding"></div>
+            <div class="col-2 padding">
+                <input type="submit" id="submit">
+            </div>
+            <div class="col-2 padding">
+                <input type="reset">
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Form Details</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p id="Details"></p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">Launch Modal</button>
+
+</form>
+
+</body>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.1/jquery.validate.min.js"></script>
+<script src="validation.js"></script>
+</html>

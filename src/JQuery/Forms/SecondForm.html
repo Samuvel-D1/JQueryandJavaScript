@@ -1,0 +1,21 @@
+<html>
+<head>
+
+</head>
+<body>
+<p id="Text">
+</p>
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.1/jquery.validate.min.js"></script>
+
+<script>
+        $(document).ready(function(){
+            const myobjectString=localStorage.getItem('FormDetails');
+           $("#Text").append(myobjectString);
+        })
+
+
+    </script>
+
+</html>

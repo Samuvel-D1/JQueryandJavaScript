@@ -109,20 +109,19 @@ $("#fNameSpan").html("<span></span>");
 }
 
 //Email Validation
-let regex = new RegExp('[a-z0-9]+@[a-z]+\.edu\.[a-z]{2,3}');
-var email=$("#email1").val();
-if(email==""){
-$("#eSpan").html("<span>Please Fill This Field</span>");
-status =false;
-}
-else if(!regex.test(email)){
-alert(regex.test(email))
-$("#eSpan").html("<span>Enter a Valid Email</span>");
-status =false;
-}
-else{
-$("#eSpan").html("<span></span>");
-}
+        var emailExp=/^([A-Za-z0-9_.])+\@([a-z])+\.([a-z])+$/
+        var email=$("#email1").val();
+        if(email==""){
+        $("#eSpan").html("<span>Please Fill This Field</span>");
+        status =false;
+        }
+        else if(!emailExp.test(email)){
+        $("#eSpan").html("<span>Enter a Valid Email</span>");
+        status =false;
+        }
+        else{
+        $("#eSpan").html("<span></span>");
+        }
 
 //Mobile Number Validation
 if($("#mobileNumber").val()=="")
@@ -138,8 +137,21 @@ else{
 $("#mobileSpan").html("<span></span>")
 <!--status true;-->
 }
+if(status){
+var json=convertFormToJSON("#form");
+alert(json);
+}
 return status;
+
 })
+function convertFormToJSON(form) {
+  const array = $(form).serializeArray(); // Encodes the set of form elements as an array of names and values.
+  const json = {};
+  $.each(array, function () {
+    json[this.name] = this.value || "";
+  });
+  return json;
+}
 })
 
 </script>

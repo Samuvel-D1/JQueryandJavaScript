@@ -11,22 +11,30 @@
 <script>
 
   function method(){
-        let count = 0;
-        var letters="abcdefghijklmnopqrstuvwxyz";
-        for (let i=2;i<=16;i++) {
-            for (let j = 0; j <= 5; j++) {
-              if(i%3==0){
-                    if(count<letters.length){
-                       document.getElementById("text").innerText+=letters.charAt(count);
-                        count++;
-                    }
-                }
-                else {
-                       document.getElementById("text").innerText+="- ";
-                }
-            }document.getElementById("text").innerText+="\n";
-        }
-
+    var letters="abcdefghijklmnopqrstuvwxyz";
+    let row=7;
+    let column=letters.length/row;
+    console.log(column);
+    var column1=Math.ceil(column);
+    console.log(column1);
+    var count=0;
+    for(let i=0;i<column1;i++){
+    for(let j=0;j<row;j++){
+    document.getElementById('text').innerText+=" -";
+    }
+    document.getElementById('text').innerText+="\n";
+    for(let j=0;j<row;j++){
+    if(letters.length>count){
+    document.getElementById('text').innerText+=letters.charAt(count);
+    count++;
+    }
+    }
+    document.getElementById('text').innerText+="\n";
+    for(let j=0;j<row;j++){
+    document.getElementById('text').innerText+=" -";
+    }
+    document.getElementById('text').innerText+="\n";
+    }
     }
 </script>
 </html>

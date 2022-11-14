@@ -1,16 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+    <style>
+    #div{
+    margin-left:400px;
+    margin-top:180px;
+    height:250px;
+    width:300px;
+    background-color:pink;
+    border:5px solid #cccccc;
+    font-weight:bold;
+    text-align:center;
+    }
+    #time{
+    margin-top:100px;
+    text-shadow: 1px 1px  #b3ffcc;
+    font-size: 40px;
+
+    }
+    </style>
 </head>
 <body>
 <div>
     <p id="time"></p>
+    <input type="button" id="button" value="Start Time">
 </div>
 </body>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script>
+    //Find The Current Time
 function updateClock(){
   const today = new Date();
   let hour = today.getHours();
@@ -18,8 +36,9 @@ function updateClock(){
   let seconds = today.getSeconds();
   m = checkTime(minute);
   s = checkTime(seconds);
-  $("#time").text(hour + ":" + minute + ":" + seconds);
+  $("#time").text(hour + ":" + m + ":" + s);
 }
+    //Add Zero If the hour or Minute less than 10
 function checkTime(i) {
   if (i < 10) {
   i = "0" + i
@@ -27,7 +46,10 @@ function checkTime(i) {
   return i;
 }
  $(document).ready(function () {
-    setInterval(updateClock, 1000);
+ $("#button").click(function(){
+ setInterval(updateClock, 1000);
+ })
+
 });
 
 </script>
