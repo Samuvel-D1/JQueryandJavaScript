@@ -12,25 +12,23 @@
 
   function method(){
     var letters="abcdefghijklmnopqrstuvwxyz";
-    let row=7;
-    let column=letters.length/row;
-    console.log(column);
-    var column1=Math.ceil(column);
-    console.log(column1);
+    let column=8;
+    let row=letters.length/column;
+    var rows=Math.ceil(row);
     var count=0;
-    for(let i=0;i<column1;i++){
-    for(let j=0;j<row;j++){
+    for(let i=0;i<rows;i++){
+    for(let j=0;j<column;j++){
     document.getElementById('text').innerText+=" -";
     }
     document.getElementById('text').innerText+="\n";
-    for(let j=0;j<row;j++){
+    for(let j=0;j<column;j++){
     if(letters.length>count){
     document.getElementById('text').innerText+=letters.charAt(count);
     count++;
     }
     }
     document.getElementById('text').innerText+="\n";
-    for(let j=0;j<row;j++){
+    for(let j=0;j<column;j++){
     document.getElementById('text').innerText+=" -";
     }
     document.getElementById('text').innerText+="\n";
