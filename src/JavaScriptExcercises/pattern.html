@@ -16,11 +16,13 @@
     let row=letters.length/column;
     var rows=Math.ceil(row);
     var count=0;
+
     for(let i=0;i<rows;i++){
     for(let j=0;j<column;j++){
     document.getElementById('text').innerText+=" -";
     }
     document.getElementById('text').innerText+="\n";
+
     for(let j=0;j<column;j++){
     if(letters.length>count){
     document.getElementById('text').innerText+=letters.charAt(count);
@@ -28,6 +30,7 @@
     }
     }
     document.getElementById('text').innerText+="\n";
+
     for(let j=0;j<column;j++){
     document.getElementById('text').innerText+=" -";
     }

@@ -36,14 +36,7 @@ the field is empty*/
             }
         })
   //this method convert form details to json String
-        function convertFormToJSON(form) {
-            const array = $(form).serializeArray();
-            const json = {};
-            $.each(array, function () {
-            json[this.name] = this.value || "";
-            });
-            return json;
-            }
+
 
 
 })

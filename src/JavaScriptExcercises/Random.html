@@ -7,17 +7,16 @@
 <div class="div">
 <input id="input" type="number">
 <p id="output"></p>
-<input type="button" id="b1" value="Generate xPassword" onclick="random1()">
+<input type="button" id="b1" value="Generate OTP" onclick="randomNumber()">
     </div>
 </body>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script>
-    function random1(){
-    const numbers = "1234567890";
+    function randomNumber(){
 const length = document.getElementById("input").value;
 let randomValue = "";
 for ( let i = 0; i < length; i++) {
-    const value = Math.floor(Math.random() * numbers.length);
+    const value = Math.floor(Math.random()*9);
     randomValue += value;
 }
 document.getElementById("output").innerText=randomValue;
